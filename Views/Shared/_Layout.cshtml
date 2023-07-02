@@ -1,0 +1,142 @@
+﻿@{
+    var topBar = ViewData["topBar"];
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="@ViewData["MetaDescription"]" />
+    <meta name="keywords" content="@ViewData["MetaKeyWords"]" />
+    <meta name="title" content="@ViewData["MetaTitle"]" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/topBar.css" />
+    <link rel="stylesheet" href="~/css/@ViewData["CssLink"]" />
+</head>
+<body class="body">
+    <header>
+        <div id="boardOfInforamationAndLogo">
+            <a asp-controller="Home" asp-action="Index">
+                <div id="logoDirection">
+                    <img src="~/img/indeximg/logo.png"
+                         id="mainLogo" />
+                    <p id="nameOfCompany">
+                        СпецПрофСтиль
+                    </p>
+                </div>
+            </a>
+            @if (topBar != "off")
+            {
+                <div id="boardOfInforamation">
+                    <div id="mailAndAddress">
+                        <div id="addressDirection">
+                            <img src="~/img/indeximg/miniimgmark.png"
+                             id="adressImage" />
+                            <p id="addressText">
+                                Минская обл., Солигорский р-н,<br>
+                                гп. Красная Слобода, ул. Тихомирова, д. 1, к. 2
+                            </p>
+                        </div>
+                        <div id="mailDirection">
+                            <img src="~/img/indeximg/miniimgmail.png"
+                             id="mailImage" />
+                            <p id="mailText">
+                                sps2011s@yandex.by
+                            </p>
+                        </div>
+                    </div>
+                    <div id="workTime">
+                        <img src="~/img/indeximg/miniimgclock.png"
+                         id="clockImage" />
+                        <div id="workTimeTextDirection">
+                            <p id="workMondayToThursday">
+                                8:30-17:00
+                            </p>
+                            <p id="workFriday">
+                                8:30-16:00
+                            </p>
+                        </div>
+                    </div>
+                    <div id="listPhoneNumbers">
+                        <div id="cityPhone">
+                            <img src="~/img/indeximg/miniimgphone.png"
+                             id="cityPhoneImage" />
+                            <p id="cityPhoneDigits">
+                                8-017-350-20-59
+                            </p>
+                        </div>
+                        <div id="a1Phone">
+                            <img src="~/img/indeximg/minimga1.png"
+                             id="a1PhoneImage" />
+                            <p id="a1PhoneDigits">
+                                8-029-350-01-03
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+
+            }
+        </div>
+        <div id="boardOfMenu">
+            <a class="menuButton"
+               asp-controller="Home" asp-action="Index">
+                <p class="textInMenuButton">
+                    ГЛАВНАЯ
+                </p>
+            </a>
+            <a class="menuButton"
+               asp-controller="Catalog" asp-action="Index">
+                <p class="textInMenuButton">
+                    КАТАЛОГ
+                </p>
+            </a>
+            <button class="menuButton"
+                    id="menuListInfo">
+                <div id="menuButtonList">
+                    <a asp-controller="Contacts" asp-action="Index">
+                        <ul class="menuButtonPartOfList">
+                            КОНТАКТЫ
+                        </ul>
+                    </a>
+                    <a asp-controller="TableDimensions" asp-action="Index">
+                        <ul class="menuButtonPartOfList">
+                            ТАБЛИЦА РАЗМЕРОВ
+                        </ul>
+                    </a>
+                    <a href="Source/Page/particle.html">
+                        <ul class="menuButtonPartOfList">
+                            СТАТЬИ
+                        </ul>
+                    </a>
+                    <a href="Source/Page/printLogo.html">
+                        <ul class="menuButtonPartOfList">
+                            НАНЕСЕНИЕ ЛОГОТИПОВ
+                        </ul>
+                    </a>
+                </div>
+                <p class="textInMenuButton">
+                    ИНФОРМАЦИЯ
+                </p>
+                <div class="triangle"></div>
+            </button>
+            <div class="menuSearchArea">
+                <input type="text"
+                       id="inputSearch" />
+            </div>
+            <div class="menuButton"
+                 id="menuButtonImgField">
+                <img src="~/img/indeximg/miniimgsearchpng.png"
+                     height="200px"
+                     width="200px"
+                     id="menuButtonImg" />
+            </div>
+        </div>
+    </header>
+    @RenderBody();
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

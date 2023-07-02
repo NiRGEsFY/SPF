@@ -1,0 +1,83 @@
+.MainContent{
+    padding:15px;
+}
+.Controller {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.Finder{
+    width:150px;
+}
+.FinderButton {
+    background-color: #124fc0;
+    border: none;
+    color: #dadada;
+    height: 23px;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.FinderButton:hover {
+    background-color: #1f3461;
+}
+.FinderButton:active{
+    box-shadow: inset 0 0 10px #000;
+}
+
+.NamePage {
+    align-content: center;
+}
+.AddNewItem {
+    display:flex;
+    position:relative;
+    justify-content:center;
+    width: 150px;
+    padding: 8px;
+    background-color: #124fc0;
+    border: 1px solid #000;
+    transition: 0.5s;
+    border: none;
+    border-radius: 8px;
+    height: 20px;
+}
+.AddNewItem:hover {
+    background-color: #1f3461;
+}
+.AddNewItem:active{
+   background-color: #1f3461;
+   box-shadow: inset 0 0 10px #000;
+}
+.table{
+    border: 1px solid #000;
+    border-collapse:collapse;
+}
+th{
+    min-width: 100px;
+    border: 1px solid #000;
+    color: #dadada;
+}
+td {
+    border: 1px solid #000;
+    text-align:center;
+    min-width:150px;
+    max-width:350px;
+    overflow:hidden;
+}
+tr {
+    border: 2px solid #000;
+}
+thead {
+    background-color: #124fc0;
+}
+.EditorButton{
+    color: #000;
+    text-decoration:none;
+}
+.EditorButton:hover{
+    text-decoration:underline;
+}
+.EditorButton:visited{
+    color: #000;
+}

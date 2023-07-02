@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPF", "SPF.csproj", "{A89815A0-216E-40DD-B5F8-094397824127}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A89815A0-216E-40DD-B5F8-094397824127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A89815A0-216E-40DD-B5F8-094397824127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A89815A0-216E-40DD-B5F8-094397824127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A89815A0-216E-40DD-B5F8-094397824127}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {701E0665-CB97-4E83-BBD9-EA6727C3EE1B}
+	EndGlobalSection
+EndGlobal

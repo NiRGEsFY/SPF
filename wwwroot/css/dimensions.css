@@ -1,0 +1,77 @@
+#middlePartOfMainContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#mainContent{
+    padding: 5px 15px 5px 15px;
+}
+.partDimensions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#spravkaShoe{
+    text-align: center;
+}
+h2,h3{
+    text-align: center;
+}
+#spravkaTop{
+    margin-bottom: 3px;
+    padding-bottom: 0px;
+}
+#spravkaDown{
+    padding-top: 0px;
+    margin-top: 0px;
+}
+table{
+    margin: 0px;
+    padding: 0px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+tr{
+    padding: 0px;
+    margin: 0px;
+}
+td{
+    margin: 0px;
+    border: 1px solid #0e0e0e;
+    padding: 5px;
+    text-align: center;
+}
+@media only screen and (max-width: 425px ){
+    table{
+        font-size: 14px;
+    }
+    td{
+        padding: 1px;
+    }
+    #mainContent{
+        padding: 5px 5px 5px 5px;
+    }
+}
+@media only screen and (max-width: 375px ){
+    table{
+        font-size: 12px;
+    }
+    td{
+        padding: 2px;
+    }
+    #mainContent{
+        padding: 3.5px 3.5px 3.5px 3.5px;
+    }
+}
+@media only screen and (max-width: 345px ){
+    table{
+        font-size: 10px;
+    }
+    td{
+        padding: 2px;
+    }
+    #mainContent{
+        padding: 2px 2px 2px 2px;
+    }
+}

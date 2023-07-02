@@ -1,0 +1,170 @@
+﻿@model SPF_.net.Views.Contacts.IndexModel
+@{
+    ViewData["MetaDescription"] = "спецпрофстиль";
+    ViewData["MetaKeyWords"] = "контакты, позвонить, спец, проф, стиль, спец проф, спец проф стиль, проф стиль, место, нахождение, спецпрофстиль,СпецПрофСтиль";
+    ViewData["MetaTitle"] = "Спец Проф Стиль";
+    ViewData["Title"] = "Контакты";
+    ViewData["CssLink"] = "contacts.css";
+    ViewData["topBar"] = "off";
+}
+<div id="directionOfMainContent">
+        <div id="leftPartOfMainContent">
+
+        </div>
+        <div id="middlePartOfMainContent">
+            <div id="boardOfInforamation"
+                 class="boardMainInfo">
+                <div id="mailAndAddress">
+                    <div id="addressDirection">
+                        <img src="~/img/indeximg/MiniImgMark.png" id="adressImage"/>
+                        <p id="addressText">
+                            Минская обл., Солигорский р-н,<br>
+                            гп. Красная Слобода, ул. Тихомирова, д. 1, к. 2
+                        </p>
+                    </div>
+                    <div id="mailDirection">
+                        <img id="mailImage"
+                             src="~/img/indeximg/MiniImgMail.png"/>
+                        <p id="mailText">
+                            sps2011s@yandex.by
+                        </p>
+                    </div>
+                </div>
+                <div id="workTime">
+                    <img id="clockImage"
+                         src="~/img/indeximg/MiniImgClock.png">
+                    <div id="workTimeTextDirection">
+                        <p id="workMondayToThursday">
+                            8:30-17:00
+                        </p>
+                        <p id="workFriday">
+                            8:30-16:00
+                        </p>
+                    </div>
+                </div>
+                <div id="listPhoneNumbers">
+                    <div id="cityPhone">
+                        <img src="~/img/indeximg/MiniImgPhone.png" 
+                             id="cityPhoneImage"/>
+                        <p id="cityPhoneDigits">
+                            8-017-350-20-59
+                        </p>
+                    </div>
+                    <div id="a1Phone">
+                        <img src="~/img/indeximg/MinImgA1.png"
+                             id="a1PhoneImage"/>
+                        <p id="a1PhoneDigits">
+                            8-029-350-01-03
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="contactsList">
+                    <div class="contactsBlock">
+                        <div class="contactsBlockImg">
+                            <img class="contactsImg"
+                                 title="Иван Иванов"
+                                 src="~/img/teamPortair/testPortair.jpg"/>
+                        </div>
+                        <div class="contactsText">
+                            <h4 class="contactsTextInside">
+                                Иван Иванов
+                            </h4>
+                            <p class="contactsTextInside">
+                                8-029-365-34-12
+                            </p>
+                            <p class="contactsTextInside">
+                                Cпециалист по продажам
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contactsBlock">
+                        <div class="contactsBlockImg">
+                            <img class="contactsImg"
+                                 title="Иван Иванов"
+                                 src="~/img/teamPortair/testPortair.jpg"/>
+                        </div>
+                        <div class="contactsText">
+                            <h4 class="contactsTextInside">
+                                Иван Иванов
+                            </h4>
+                            <p class="contactsTextInside">
+                                8-029-365-34-12
+                            </p>
+                            <p class="contactsTextInside">
+                                Cпециалист по продажам
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contactsBlock">
+                        <div class="contactsBlockImg">
+                            <img class="contactsImg"
+                                 title="Иван Иванов"
+                                 src="~/img/teamPortair/testPortair.jpg" />
+                        </div>
+                        <div class="contactsText">
+                            <h4 class="contactsTextInside">
+                                Иван Иванов
+                            </h4>
+                            <p class="contactsTextInside">
+                                8-029-365-34-12
+                            </p>
+                            <p class="contactsTextInside">
+                                Cпециалист по продажам
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="containerMap">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afc518766dec75111708cf57c3eaf9de9a4a5eef51d78a13388dca777ca3a0c5e&amp;source=constructor"
+                            id="yandexMap"
+                            width="750" 
+                            height="500" 
+                            frameborder="0"></iframe>
+                </div>
+            </div>
+            <div id="TextAboutCompany">
+                <div id="leftPartOfBottonTextAboutCompany" 
+                     class="partOfTextAboutCompany">
+                    ООО «СпецПрофСтиль»<br>
+                    Адрес: РБ, 223723, Минская обл., Солигорский р-н, гп. Красная Слобода, ул. Тихомирова, д.1, к.2. GLN - 4819110690003<br>
+                    Тел.: 8-017-350-20-59, 8-029-350-01-03<br>
+                    УНП 690740612, ОКПО 299302346000
+                </div>
+                <div id="middlePartOfBottonTextAboutCompany"
+                     class="partOfTextAboutCompany">
+                    Банк: ОАО «СБЕР БАНК», г. Минск, ул. Петра Мстиславца, 13, 220114<br>
+                    Р/с BY22BPSB30121076890189330000<br>
+                    Код банка: BPSBBY2X                
+                </div>
+                <div id="rightPartOfBottonTextAboutCompany"
+                     class="partOfTextAboutCompany">
+                    Почтовый адрес: 220037, г. Минск, ул. Передовая, 15, пом. 24А<br>
+                    Адрес склада: г. Минск, ул. Передовая, д. 15, пом. 5.
+                </div>
+            </div>
+            <footer id="footerPanel">
+                <div id="bottonMenu">
+                    <a asp-controller="Contacts" asp-action="Index">
+                    <div class="partOfBottonMenu">
+                        Связаться
+                    </div>
+                    </a>
+                    <a asp-controller="Catalog" asp-action="Index">
+                        <div class="partOfBottonMenu">
+                            Товары
+                        </div>
+                    </a>
+                    <a asp-controller="Home" asp-action="Index">
+                        <div class="partOfBottonMenu">
+                            СпецПрофСтиль
+                        </div>
+                    </a>
+                </div>
+            </footer>
+        </div>
+        <div id="rightPartOfMainContent">
+           
+        </div>
+    </div>

@@ -1,0 +1,111 @@
+#itemField{
+    display: flex;
+    justify-content:space-evenly;
+    width: 600px;
+    flex-direction: row;
+    padding: 10px 20px;
+}
+#textAboutItem{
+    padding: 0px 20px;
+}
+#imgItem{
+    width: 200px;
+    height: auto;
+    border: 1px solid #00000010;
+}
+#itemName{
+    margin: 10px 0px 5px 0px;
+}
+#itemVendorCode{
+    margin: 0px 0px 10px 0px;
+    color: #707070a2;
+}
+#itemCostBlock{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.price{
+    margin: 10px 10px;
+    border-radius: 4px;
+    background-color: none;
+    padding: 4px;
+}
+.discountPrice{
+    margin: 10px 10px;
+    border-radius: 4px;
+    background-color: #00ff377c;
+    padding: 4px;
+}
+.oldPrice{
+    margin: 10px 10px;
+    border-radius: 4px;
+    background-color: none;
+    padding: 4px;
+    text-decoration: line-through;
+    background-color: #e900008f;
+}
+#paramsField{
+    padding: 0px 20px;
+}
+#descriptionField{
+    margin: 5px 0px;
+}
+#paramsBlock{
+    margin: 10px 0px;
+}
+#paramsTable{
+    border-collapse: collapse;
+}
+#paramsTable td{
+    border-bottom: 2px solid #1156d656;
+    width: 300px;
+    font-size: 20px;
+}
+@media only screen and (max-width: 425px ){
+    #paramsTable td{
+        width: 150px;
+        font-size: 16px;
+    }
+    #itemField{
+        width: 300px;
+        padding: 10px 10px;
+    }
+    #minimalDescrition{
+        display: none;
+    }
+    h2{
+        font-size: 18px;
+    }
+    h3{
+        font-size: 16px;
+    }
+    #imgItem{
+        width: 100px;
+        height: auto;
+    }
+    .price{
+        font-size: 14px;
+    }
+    .discountPrice{
+        font-size: 14px;
+    }
+    .oldPrice{
+        font-size: 14px;
+    }
+    #descriptionField p{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 375px ){
+
+}
+@media only screen and (max-width: 320px ){
+    #paramsBlock h3{
+        display: none;
+    }
+    #descriptionField{
+        display: none;
+    }
+}

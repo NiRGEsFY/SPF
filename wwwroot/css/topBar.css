@@ -1,0 +1,497 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+header{
+    padding: 0;
+    margin: 0;
+    background-color: #1f3461;
+}
+a{
+    color: #dadada;
+    text-decoration: none;
+}
+#boardOfInforamationAndLogo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+#boardOfInforamation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+#logoDirection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+}
+#logoDirection:hover{
+    text-decoration: underline;
+    color: #000000;
+}
+#mainLogo{
+    width: auto;
+    height: 50px;
+    margin-right: 10px;
+}
+#nameOfCompany{
+    font-weight: 600;
+    font-size: x-large;
+    color: #222222;
+}
+#mailAndAddress{
+    display: flex;
+    flex-direction: column;
+}
+#addressDirection{
+    margin: 0px 15px 3px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#adressImage{
+    margin: 0px 9px 0px 9px;
+    height: 25px;
+    width: auto;
+}
+#addressText{
+    margin: 0px 5px 0px 5px;
+}
+#mailDirection{
+    margin: 3px 15px 0px 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#mailImage{
+    margin: 0px 5px 0px 5px;
+    height: 15px;
+    width: auto;
+}
+#mailText{
+    margin: 0px 5px 0px 5px;
+}
+#workTime{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#clockImage{
+    height: 35px;
+    width: auto;
+}
+#workTimeTextDirection{
+    display: flex;
+    flex-direction: column;
+}
+#workMondayToThursday::before{
+    margin: 5px 0px 5px 10px;
+    height: auto;
+    font-weight: bold;
+    content: "Пн.-Чт.";
+    color:#1f3461;
+}
+#workMondayToThursday{
+    margin: 5px 0px 5px 0px;
+    height: auto;
+}
+#workFriday::before{
+    margin: 5px 30px 5px 10px;
+    height: auto;
+    font-weight: bold;
+    content: "Пт.";
+    color:#1f3461;
+}
+#workFriday{
+    margin: 5px 0px 5px 0px;
+    height: auto;
+}
+#listPhoneNumbers{
+    margin: 0px 0px 0px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cityPhone{
+    margin: 0px 0px 5px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#cityPhoneImage{
+    height: 25px;
+    width: auto;
+}
+#cityPhoneDigits{
+    margin: 0px 0px 0px 5px;
+}
+#a1Phone{
+    margin: 5px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#a1PhoneImage{
+    height: 25px;
+    width: auto;
+}
+#a1PhoneDigits{
+    margin: 0px 0px 0px 6.5px;
+}
+#boardOfMenu{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    background-color: #1f3461;
+    z-index: 2;
+}
+.menuButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0px 30px 0px 30px;
+    padding: 0px 5px;
+    border-radius: 8px;
+    background-color: #1f3461;
+    transition-duration: 0.5s;
+    border: none;
+    height: 80%;
+    position: relative;
+    z-index: 2;
+    color: #dadada;
+}
+.textInMenuButton {
+    color: #dadada;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #dadada;
+}
+.menuButton:hover {
+    background-color: #124fc0;
+}
+.menuButton:hover .triangle{
+    transition-duration: 0.5s;
+    border-top: 10px solid #dadada;
+}
+#menuListInfo{
+    position: relative;
+    z-index: 2;
+}
+#menuButtonList{
+    z-index: 1;
+    padding-top: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+    top: 19.5px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.menuButtonPartOfList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    transition: 0.5s;
+    opacity: 0;
+    width: 75%;
+    font-size: 0px;
+    background-color: #1f3461;
+    z-index: -1;
+}
+
+#menuListInfo:hover .menuButtonPartOfList,
+#menuButtonList:hover .menuButtonPartOfList{
+    font-size: 14px;
+    display: flex;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 1.5px;
+    border: 1px solid #dadada;
+    height: 40px;
+    position: relative; 
+    width: 100%;
+    color: #dadada;
+    text-decoration: none;
+    z-index: 2;
+}
+.menuButtonPartOfList:hover{
+    background: #124fc0;
+    z-index: 3;
+}
+#inputSearch{
+    background-color: #dadada;
+    border: 1px solid #111111;
+    border-radius: 4px;
+    font-size: 14px;
+}
+#menuButtonImgField{
+    margin: 0px 0px 0px 5px;
+    width: 50px;
+    height: 80%;
+}
+#menuButtonImg{
+    width: 30px;
+    height: 30px;
+}
+.triangle {
+    margin: 0px 5px 0px 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #dadada;
+}
+#directionOfMainContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#leftPartOfMainContent{
+    background-color: #fff;
+    width: 100%;
+    justify-self: start;
+}
+#middlePartOfMainContent{
+    background-color: #f8f8f8;
+    box-shadow: 0px 50px 100px 15px #111c;
+    z-index: 1;
+}
+#rightPartOfMainContent{
+    background-color: #fff;
+    width: 100%;
+    justify-self: end;
+    z-index: 0;
+}
+footer{
+    padding: 0;
+    background: rgb(249,253,228);
+    background: linear-gradient(0deg, rgba(249,253,228,1) 50%, rgba(248,248,248,1) 100%);
+    padding-top: 5%;
+    left: 0;
+}
+#bottonTextAboutCompany{
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+    justify-content: start;
+    margin-bottom: 30px;
+}
+.partOfBottonTextAboutCompany{
+    margin: 5px 15px 5px 15px;
+}
+#leftPartOfBottonTextAboutCompany{
+    width: 335px;
+}
+#middlePartOfBottonTextAboutCompany{
+    width: 265px;
+}
+#rightPartOfBottonTextAboutCompany{
+    width: 270px;
+}
+#bottonMenu{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 10px;
+    width: 100%;
+}
+.partOfBottonMenu{
+    color: #000000;
+    margin: 0px 10px 5px 0px;
+}
+#bottonMenu a, a:visited, a:active{
+    color: #dadada;
+    text-decoration: none;
+}
+#bottonMenu a:hover{
+    text-decoration:underline;
+}
+
+@media only screen and (max-width: 1230px ){
+    .blockTopItem{
+        width: 200px;
+        height: 200px;
+        margin: 5px 15px 5px 15px;
+    }
+    #listTopItems{
+        margin: 50px 0px 50px 0px;
+    }
+    #mainBlockMerit{
+        margin-top: 10px;
+        height: 300px;
+    }
+    .containerMiniImgInBlockMerit{
+        width: 150px;
+        height: 150px;
+    }
+    .textInBlockMerit{
+        font-size: 16px;
+    }
+    .partBlockMerit{
+        height: 240px;
+        width: 150px;
+        margin: 0px 12px 0px 12px;
+    }
+    .imgInBlockMerit{
+        width: 110px;
+        height: auto;
+        margin: 5px 5px 15px 5px;
+    }
+    #scroller{
+        height: 400px;
+    }
+}
+@media only screen and (max-width: 970px ){
+    .blockTopItem{
+        width: 160px;
+        height: 160px;
+        margin: 5px 15px 5px 15px;
+    }
+    #listTopItems{
+        margin: 20px 0px 30px 0px;
+    }
+    #mainBlockMerit{
+        margin-top: 10px;
+        height: 250px;
+    }
+    .containerMiniImgInBlockMerit{
+        width: 110px;
+        height: 110px;
+    }
+    .textInBlockMerit{
+        font-size: 14px;
+    }
+    .partBlockMerit{
+        height: 200px;
+        width: 130px;
+        margin: 0px 12px 0px 12px;
+    }
+    .imgInBlockMerit{
+        width: 90px;
+        height: auto;
+        margin: 5px 5px 15px 5px;
+    }
+    #scroller{
+        height: 400px;
+    }
+    #bottonTextAboutCompany{
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    #leftPartOfBottonTextAboutCompany{
+        width: 335px;
+    }
+    #middlePartOfBottonTextAboutCompany{
+        width: 265px;
+    }
+    #rightPartOfBottonTextAboutCompany{
+        margin-top: 20px;
+        width: 270px;
+    }
+    #boardOfInforamation{
+        flex-wrap: wrap;
+    }
+    #workTime{
+        margin-right: 36px;
+    }
+}
+@media only screen and (max-width: 780px ){
+    .blockTopItem{
+        width: 110px;
+        height: 110px;
+        margin: 5px 8px 5px 8px;
+    }
+    #listTopItems{
+        margin: 20px 0px 30px 0px;
+    }
+    #mainBlockMerit{
+        margin-top: 10px;
+        height: 250px;
+    }
+    .containerMiniImgInBlockMerit{
+        width: 110px;
+        height: 110px;
+    }
+    .textInBlockMerit{
+        font-size: 14px;
+    }
+    .partBlockMerit{
+        height: 200px;
+        width: 90px;
+        margin: 0px 12px 0px 12px;
+    }
+    .imgInBlockMerit{
+        width: 90px;
+        height: auto;
+        margin: 5px 5px 15px 5px;
+    }
+    #scroller{
+        height: 400px;
+    }
+}
+@media only screen and (max-width: 425px ){
+    #scroller{
+        height: 200px;
+    }
+    #boardOfInforamation{
+        display: none;
+    }
+    #inputSearch{
+        display: none;
+        width: 0px;
+        height: 0px;
+    }
+    h1{
+        font-size: 22px;
+    }
+    #bottonTextAboutCompany{
+        display: none;
+    }
+    #middlePartOfMainContent{
+        width: 1500%;
+    }
+    #menuButtonImg{
+        display: none;
+        width: 0px;
+        height: 0px;
+    }
+    #menuButtonImgField{
+        margin: 0px;
+        width: 0px;
+    }
+    .menuSearchArea{
+        width: 0px;
+        margin: 0px;
+    }
+}
+@media only screen and (max-width: 375px ){
+    #mainBlockMerit{
+        height: 575px;
+    }
+    .textInMenuButton{
+        font-size: 12px;
+    }
+    .menuButton{
+        margin: 0px 4px 0px 4px;
+    }
+}
