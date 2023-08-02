@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SPF.Data;
+using SPF.Entities;
 using System.Security.Claims;
 
 namespace SPF
@@ -18,25 +19,37 @@ namespace SPF
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options
+                    .UseSqlServer(connectionString)).AddIdentity<ApplicationUser, ApplicationRole>(config =>
+                    {
+                        config.Password.RequireDigit = false;
+                        config.Password.RequireLowercase = false;
+                        config.Password.RequireUppercase = false;
+                        config.Password.RequireNonAlphanumeric = false;
+                        config.Password.RequiredLength = 8;
+                    })
+                    .AddEntityFrameworkStores<ApplicationDbContext>();
+
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-            builder.Services.AddAuthentication("Cookie")
-                .AddCookie("Cookie", config =>
-                {
-                    config.LoginPath = "/Admin/Login";
-                    config.AccessDeniedPath = "/Admin/AccessDenied";
-                });
+            builder.Services.ConfigureApplicationCookie(config =>
+            {
+                config.LoginPath = "/Admin/Login";
+                config.AccessDeniedPath = "/Admin/AccessDenied";
+            });
+
             builder.Services.AddAuthorization(options =>
             {
                 options.AddPolicy("Administrator", builder =>
                 {
                     builder.RequireClaim(ClaimTypes.Role, "Administrator");
                 });
+
                 options.AddPolicy("Moder", builder =>
                 {
-                    builder.RequireClaim(ClaimTypes.Role, "Moder");
+                    builder.RequireAssertion(x => x.User.HasClaim(ClaimTypes.Role, "Administrator") ||
+                                                  x.User.HasClaim(ClaimTypes.Role, "Moder"));
                 });
             });
 
@@ -66,7 +79,6 @@ namespace SPF
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-            app.MapRazorPages();
 
             app.Run();
         }

@@ -1,17 +1,7 @@
-﻿<h1>AccessDenied</h1>
+﻿@{
+    @model SPF.Views.Admin.IndexModel
+}
+<h1>Access Denied</h1>
 
-<a asp-controller="Admin" asp-action="LogOff">Log Off</a>
-<a asp-controller="Admin" asp-action="Administrator">
-    Administrator
-</a>
-<a asp-controller="Admin" asp-action="Moder">
-    Moder
-</a>
-
-<p>
-    IsAuthenticated:  @ViewBag.IsAuthenticated
-</p>
-
-<p>
-    Name: @ViewBag.Name
-</p>
+<a asp-controller="Home" asp-action="Index">Home</a>
+<a asp-controller="Admin" asp-action="Index">Admin Menu</a>

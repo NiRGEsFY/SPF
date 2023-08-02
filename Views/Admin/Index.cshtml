@@ -1,18 +1,17 @@
-﻿<h1>Admin</h1>
-
+﻿@page
+@model SPF.Views.Admin.IndexModel
+@{
+}
+<h1>
+    Admin Menu
+</h1>
+<p>
+    Post: @ViewBag.Post
+</p>
+<p>
+    Login: @ViewBag.Login
+</p>
+<a asp-controller="Home" asp-action="Index">Home</a>
+<a asp-controller="Admin" asp-action="Admin">Admin</a>
+<a asp-controller="Admin" asp-action="Moder">Moder</a>
 <a asp-controller="Admin" asp-action="LogOff">Log Off</a>
-<a asp-controller="Admin" asp-action="Administrator">
-    Administrator
-</a>
-<a asp-controller="Admin" asp-action="Moder">
-    Moder
-</a>
-
-<p>
-    IsAuthenticated:  @ViewBag.IsAuthenticated
-</p>
-
-<p>
-    Name: @ViewBag.Name
-</p>
-
