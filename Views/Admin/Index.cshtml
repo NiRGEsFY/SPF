@@ -1,17 +1,31 @@
-﻿@page
-@model SPF.Views.Admin.IndexModel
-@{
+﻿@{
+    ViewData["Title"] = "Админ";
+    ViewData["CssLink"] = "admin_menu.css";
 }
-<h1>
-    Admin Menu
-</h1>
-<p>
-    Post: @ViewBag.Post
-</p>
-<p>
-    Login: @ViewBag.Login
-</p>
-<a asp-controller="Home" asp-action="Index">Home</a>
-<a asp-controller="Admin" asp-action="Admin">Admin</a>
-<a asp-controller="Admin" asp-action="Moder">Moder</a>
-<a asp-controller="Admin" asp-action="LogOff">Log Off</a>
+@model SPF.Views.Admin.IndexModel
+
+<div class="mainBlock">
+    <div class="mainBlockMenu">
+        <div class="adminMenuLogo, adminMenuButton">
+            <h1>
+                Админ Меню
+            </h1>
+        </div>
+        <div class="adminMenuButton">
+            <h1>
+                Должность: @ViewBag.Post
+            </h1>
+        </div>
+        <div class="adminMenuButton">
+            <h1>
+                Логин: @ViewBag.Login
+            </h1>
+        </div>
+    </div>
+    <div class="navMenu">
+        <a asp-controller="Home" class="adminA" asp-action="Index">Главная страница</a>
+        <a asp-controller="Admin" class="adminA" asp-action="Administrator">Администратор</a>
+        <a asp-controller="Admin" class="adminA" asp-action="Moder">Менеджер</a>
+        <a asp-controller="Admin" class="adminA" asp-action="LogOff">Выйти из аккаунта</a>
+    </div>
+</div>

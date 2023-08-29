@@ -1,0 +1,74 @@
+div.footer{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+    background-color: none;
+}
+div.loginBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    height: 100%;
+    width: 40%;
+    margin: 0px;
+}
+div.loginBlock h1{
+    margin: 0px;
+}
+div.loginAndPassPart{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div.loginAndPassPart label{
+    font-size: large;
+}
+div.loginAndPassPart input{
+    height: 20px;
+    text-align: center;
+    width: 200px;
+}
+div.choicePart{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+div.submitPart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.submitPart button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 40px;
+    width: 80px;
+    background-color: #00c531;
+    box-shadow: none;
+    border: 1px solid #1f3461;
+    border-radius: 5px;
+}
+div.submitPart button:hover{
+    transition: 0.4s;
+    background-color: #00f73e;
+}
+div.exitPart a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 40px;
+    width: 80px;
+    background-color: #d80000;
+    box-shadow: none;
+    border: 1px solid #1f3461;
+    border-radius: 5px;
+}
+div.exitPart a:hover{
+    transition: 0.4s;
+    background-color: #ff0000;
+}

@@ -1,0 +1,46 @@
+div.mainBlock{
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.mainBlockMenu {
+    display: flex;
+    background-color: #f3f3f3;
+    border: 1px solid #1f3461;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+}
+div.adminMenuButton {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+div.adminMenuButton p{
+
+}
+div.adminMenuLogo{
+    background-color: none;
+}
+div.navMenu{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+a.adminA {
+    height: 50px;
+    width: 250px;
+    background-color: #1f3461;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    color: #f7f7f7;
+}
+a.adminA:hover {
+    text-decoration: underline;
+    color: #bbbbbb;
+    transition: 0.4s;
+}

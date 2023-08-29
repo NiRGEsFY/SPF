@@ -1,27 +1,37 @@
 ﻿@model LoginViewModel
 @{
+    ViewData["Title"] = "Авторизация";
+    ViewData["CssLink"] = "admin_login.css";
 }
-<h1>Login</h1>
+<div class="footer">
+    <div class="loginBlock">
+    <h1>Авторизация</h1>
 
-<form asp-controller="Admin" asp-action="Login" method="post">
-    <div asp-validation-summary="All"></div>
-    <input hidden asp-for= "ReturnUrl" />
-    <div>
-        <label>
-            UserName
-        </label>
-        <input asp-for= "UserName" />
-        <span asp-validation-for="UserName"></span>
+        <form asp-controller="Admin" asp-action="Login" method="post">
+            <div asp-validation-summary="All"></div>
+            <input hidden asp-for= "ReturnUrl" />
+            <div class="loginAndPassPart">
+                <label>
+                    Логин
+                </label>
+                <input asp-for= "UserName" />
+                <span asp-validation-for="UserName"></span>
+            </div>
+            <div class="loginAndPassPart">
+                <label>
+                    Пароль
+                </label>
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="choicePart">
+                    <div class="submitPart">
+                        <button type="submit">Войти</button>
+                    </div>
+                    <div class="exitPart">
+                        <a asp-controller="Home" asp-action="Index">Выйти</a>
+                    </div>
+            </div>
+        </form>
     </div>
-    <div>
-        <label>
-            Password
-        </label>
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <p>
-        <button type="submit">Log In</button>
-    </p>
-</form>
-<a asp-controller="Home" asp-action="Index">Home</a>
+</div>

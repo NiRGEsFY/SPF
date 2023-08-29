@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SPF.Views.Admin
 {
-    public class AdminModel : PageModel
+    public class AdministratorModel : PageModel
     {
         public void OnGet()
         {
