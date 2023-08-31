@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<SPF.Models.Items.Item>
+
+@{
     ViewData["MetaDescription"] = "спецпрофстиль";
     ViewData["MetaKeyWords"] = "купить, спецовка, перчатки, обувь, цена, очки, защитные, спец-одежда, спец одежда, спец одежду, спецовку, штаны, защитный, лопата, цена,";
     ViewData["MetaTitle"] = "Купить Спец Одежду";
@@ -14,10 +16,19 @@
                 <p>Фильтр</p>
             </button>
             <div id="catalogMenu">
+                <form class="catalogForm">
                 <div id="NameCatalog">
                     <h3>
                         Каталог
                     </h3>
+                </div>
+                    <div class="catalogSearchName">
+                        <p>
+                            Поиск:
+                        </p>
+                </div>
+                <div class="catalogSearchField">
+                    <input class="catalogSearch" name="searchName"/>
                 </div>
                 <div id="catalogList">
                     <ul class="catalogUl">
@@ -36,19 +47,19 @@
                                 <li>
                                     <h4>Летняя</h4>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox"  name="Type" value="Костюм" />
                                         <p>
                                             Костюм
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox"  name="Type" value="Халат" />
                                         <p>
                                             Халат
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Трикотаж" />
                                         <p>
                                             Трикотаж
                                         </p>
@@ -57,31 +68,31 @@
                                 <li>
                                     <h4>Зимняя</h4>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Куртка" />
                                         <p>
                                             Куртка
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Жилет" />
                                         <p>
                                             Жилет
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Брюки" />
                                         <p>
                                             Брюки
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Полукомбинезоны" />
                                         <p>
                                             Полукомбинезоны
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Костюмы сварщика утепленные" />
                                         <p>
                                             Костюмы сварщика утепленные
                                         </p>
@@ -90,31 +101,31 @@
                                 <li>
                                     <h4>Защитная</h4>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Влагозащитная" />
                                         <p>
                                             Влагозащитная
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Спецодежда от кислот и агрессивной среды" />
                                         <p>
                                             Спецодежда от кислот и агрессивной среды
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Спецодежда от высоких температур" />
                                         <p>
                                             Спецодежда от высоких температур
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Фартуки" />
                                         <p>
                                             Фартуки
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Сигнальные жилеты" />
                                         <p>
                                             Сигнальные жилеты
                                         </p>
@@ -137,25 +148,25 @@
                                 <li>
                                     <h4>Летняя</h4>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Ботинки" />
                                         <p>
                                             Ботинки
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Сапоги" />
                                         <p>
                                             Сапоги
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Полуботинки" />
                                         <p>
                                             Полуботинки
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Тапочки" />
                                         <p>
                                             Тапочки
                                         </p>
@@ -164,25 +175,25 @@
                                 <li>
                                     <h4>Зимняя</h4>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Ботинки утепленные" />
                                         <p>
                                             Ботинки утепленные
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Сапоги утепленные" />
                                         <p>
                                             Сапоги утепленные
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Обувь войлочная" />
                                         <p>
                                             Обувь войлочная
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Чулки утепляющие" />
                                         <p>
                                             Чулки утепляющие
                                         </p>
@@ -191,13 +202,13 @@
                                 <li>
                                     <h4>ПВХ ЭВА</h4>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Сапоги" />
                                         <p>
                                             Сапоги
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Галоши" />
                                         <p>
                                             Галоши
                                         </p>
@@ -220,7 +231,7 @@
                                 <li>
                                     <h4>Средства индивидуальной защиты</h4>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Головы" />
                                         <p>
                                             Головы
                                         </p>
@@ -228,7 +239,7 @@
                                 </li>
                                 <li>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Зрения" />
                                         <p>
                                             Зрения
                                         </p>
@@ -236,7 +247,7 @@
                                 </li>
                                 <li>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Дыхания" />
                                         <p>
                                             Дыхания
                                         </p>
@@ -245,19 +256,19 @@
                                 <li>
                                     <h4>Средства защиты рук</h4>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Перчатки" />
                                         <p>
                                             Перчатки
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Рукавицы" />
                                         <p>
                                             Рукавицы
                                         </p>
                                     </div>
                                     <div class="setting">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" name="Type" value="Краги" />
                                         <p>
                                             Краги
                                         </p>
@@ -285,244 +296,61 @@
                         </li>
                         <li class="mainCatalogItem">
                             <button class="buttonFind">
+                                    <input class="searchButton" type="submit" value="Filter" />
                                 ПОИСК
                             </button>
                         </li>
                     </ul>
                 </div>
+                </form>
             </div>
             <div id="catalogContext">
+                @foreach (var item in Model)
+                {
                 <div class="catalogItem">
-                    <a href="../Page/item.html">
+                    <a asp-action="Item" asp-route-id="@item.Id">
                         <img class="catalogItemImg"
-                             src="../Image/itemPack/artical_5806.jpg"
-                             />
-                    </a>
-                    <div class="catalogItemDescrition">
-                        <div class="catalogItemFieldCategory">
-                            <div class="catalogItemFieldCategoryBlock"
-                                 id="superCost">
-                                супер цена
-                            </div>
-                            <div class="catalogItemFieldCategoryBlock"
-                                 id="wholeSaleCheaper">
-                                оптом дешевле
-                            </div>
-                        </div>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <h4 class="catalogItemName">
-                                Костюм рабочий усиленный с брюками
-                            </h4>
-                        </a>
-                        <p class="catalogItemVendorCode">
-                            Артикул: 5806
-                        </p>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <p class="catalogItemMiniDescrition">
-                                Надёжность. Удобство. Экономичность.
-                                Вот 3 понятия, которые идеально описывают
-                                данную модель рабочего костюма!
-                            </p>
-                        </a>
-                    </div>
-                    <div class="catalogItemCost">
-                        <p class="discountPrice">
-                            3.99 Р
-                        </p>
-                        <p class="oldPrice">
-                            5.00 Р
-                        </p>
-                    </div>
-                </div>
-                <div class="catalogItem">
-                    <a href="../Page/item.html">
-                        <img class="catalogItemImg"
-                             src="../Image/itemPack/artical_5806.jpg"
+                             src="@item.ImgUrl"
                              />
                     </a>
                     <div class="catalogItemDescrition">
                         <div class="catalogItemFieldCategory">
                         </div>
-                        <a href="../Page/item.html"
+                        <a asp-action="Item" asp-route-id="@item.Id"
                            class="contextHref">
                             <h4 class="catalogItemName">
-                                Костюм рабочий усиленный с брюками
+                                @item.Name
                             </h4>
                         </a>
                         <p class="catalogItemVendorCode">
-                            Артикул: 5806
+                            Артикул: @item.Id
                         </p>
-                        <a href="../Page/item.html"
+                        <a asp-action="Item" asp-route-id="@item.Id"
                            class="contextHref">
                             <p class="catalogItemMiniDescrition">
-                                Надёжность. Удобство. Экономичность.
-                                Вот 3 понятия, которые идеально описывают
-                                данную модель рабочего костюма!
+                                @item.LowDescription
                             </p>
                         </a>
                     </div>
                     <div class="catalogItemCost">
-                        <p class="price">
-                            4.99 Р
-                        </p>
+                        @if(item.PriceLow > 0){
+                                <div class="catalogItemCost">
+                                    <p class="discountPrice">
+                                        @item.PriceLow р.
+                                    </p>
+                                    <p class="oldPrice">
+                                        @item.Price р.
+                                    </p>
+                                </div>
+                        }
+                        @if(item.PriceLow <= 0){
+                                <p class="price">
+                                    @item.Price р.
+                                </p>
+                        }
                     </div>
                 </div>
-                <div class="catalogItem">
-                    <a href="../Page/item.html">
-                        <img class="catalogItemImg"
-                             src="../Image/itemPack/artical_5806.jpg"
-                             />
-                    </a>
-                    <div class="catalogItemDescrition">
-                        <div class="catalogItemFieldCategory">
-                            <div class="catalogItemFieldCategoryBlock"
-                                 id="superCost">
-                                супер цена
-                            </div>
-                            <div class="catalogItemFieldCategoryBlock"
-                                 id="wholeSaleCheaper">
-                                оптом дешевле
-                            </div>
-                        </div>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <h4 class="catalogItemName">
-                                Костюм рабочий усиленный с брюками
-                            </h4>
-                        </a>
-                        <p class="catalogItemVendorCode">
-                            Артикул: 5806
-                        </p>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <p class="catalogItemMiniDescrition">
-                                Надёжность. Удобство. Экономичность.
-                                Вот 3 понятия, которые идеально описывают
-                                данную модель рабочего костюма!
-                            </p>
-                        </a>
-                    </div>
-                    <div class="catalogItemCost">
-                        <p class="discountPrice">
-                            3.99 Р
-                        </p>
-                        <p class="oldPrice">
-                            5.00 Р
-                        </p>
-                    </div>
-                </div>
-                <div class="catalogItem">
-                    <a href="../Page/item.html">
-                        <img class="catalogItemImg"
-                             src="../Image/itemPack/artical_5806.jpg"
-                             />
-                    </a>
-                    <div class="catalogItemDescrition">
-                        <div class="catalogItemFieldCategory">
-                        </div>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <h4 class="catalogItemName">
-                                Костюм рабочий усиленный с брюками
-                            </h4>
-                        </a>
-                        <p class="catalogItemVendorCode">
-                            Артикул: 5806
-                        </p>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <p class="catalogItemMiniDescrition">
-                                Надёжность. Удобство. Экономичность.
-                                Вот 3 понятия, которые идеально описывают
-                                данную модель рабочего костюма!
-                            </p>
-                        </a>
-                    </div>
-                    <div class="catalogItemCost">
-                        <p class="price">
-                            4.99 Р
-                        </p>
-                    </div>
-                </div>
-                <div class="catalogItem">
-                    <a href="../Page/item.html">
-                        <img class="catalogItemImg"
-                             src="../Image/itemPack/artical_5806.jpg"
-                             />
-                    </a>
-                    <div class="catalogItemDescrition">
-                        <div class="catalogItemFieldCategory">
-                            <div class="catalogItemFieldCategoryBlock"
-                                 id="superCost">
-                                супер цена
-                            </div>
-                            <div class="catalogItemFieldCategoryBlock"
-                                 id="wholeSaleCheaper">
-                                оптом дешевле
-                            </div>
-                        </div>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <h4 class="catalogItemName">
-                                Костюм рабочий усиленный с брюками
-                            </h4>
-                        </a>
-                        <p class="catalogItemVendorCode">
-                            Артикул: 5806
-                        </p>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <p class="catalogItemMiniDescrition">
-                                Надёжность. Удобство. Экономичность.
-                                Вот 3 понятия, которые идеально описывают
-                                данную модель рабочего костюма!
-                            </p>
-                        </a>
-                    </div>
-                    <div class="catalogItemCost">
-                        <p class="discountPrice">
-                            3.99 Р
-                        </p>
-                        <p class="oldPrice">
-                            5.00 Р
-                        </p>
-                    </div>
-                </div>
-                <div class="catalogItem">
-                    <a href="../Page/item.html">
-                        <img class="catalogItemImg"
-                             src="../Image/itemPack/artical_5806.jpg"
-                             />
-                    </a>
-                    <div class="catalogItemDescrition">
-                        <div class="catalogItemFieldCategory">
-                        </div>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <h4 class="catalogItemName">
-                                Костюм рабочий усиленный с брюками
-                            </h4>
-                        </a>
-                        <p class="catalogItemVendorCode">
-                            Артикул: 5806
-                        </p>
-                        <a href="../Page/item.html"
-                           class="contextHref">
-                            <p class="catalogItemMiniDescrition">
-                                Надёжность. Удобство. Экономичность.
-                                Вот 3 понятия, которые идеально описывают
-                                данную модель рабочего костюма!
-                            </p>
-                        </a>
-                    </div>
-                    <div class="catalogItemCost">
-                        <p class="price">
-                            4.99 Р
-                        </p>
-                    </div>
-                </div>
+                }
             </div>
         </div>
         <footer>

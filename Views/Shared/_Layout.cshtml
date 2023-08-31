@@ -82,6 +82,7 @@
             }
         </div>
         <div id="boardOfMenu">
+
             <a class="menuButton"
                asp-controller="Home" asp-action="Index">
                 <p class="textInMenuButton">
@@ -123,17 +124,28 @@
                 </p>
                 <div class="triangle"></div>
             </button>
-            <div class="menuSearchArea">
-                <input type="text"
-                       id="inputSearch" />
-            </div>
+            
+            @using (Html.BeginForm())
+            {
+            <div class="searchField">
+                <div>
+                    <p>
+                        
+                        <input class="searchName" name="searchName">
+                    </p>
+                </div>
+            
             <div class="menuButton"
                  id="menuButtonImgField">
                 <img src="~/img/indeximg/miniimgsearchpng.png"
                      height="200px"
                      width="200px"
                      id="menuButtonImg" />
+                    <input class="searchInput" type="submit" value="" asp-controller="Catalog" asp-action="">
             </div>
+            </div>
+            }
+            
         </div>
     </header>
     @RenderBody()

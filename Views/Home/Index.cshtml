@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<SPF.Models.Items.Item>
+@{
     ViewData["MetaDescription"] = "спецпрофстиль";
     ViewData["MetaKeyWords"] = "купить, спецовка, перчатки, обувь, цена, очки, защитные, спец-одежда, спец одежда, спец одежду, спецовку, штаны, защитный";
     ViewData["MetaTitle"] = "Купить Спец Одежду";
@@ -77,52 +78,23 @@
                 Самые популярные товары
             </h1>
             <div id="listTopItems">
-                <a href="Source/Page/item.html">
+                @foreach (var item in Model)
+                {
+                    <a asp-controller="Catalog" asp-action="Item" asp-route-id="@item.Id">
                     <div class="blockTopItem">
-                        <img src="~/img/indexImg/premimghands.png"
+                        <img src="@item.ImgUrl"
                              height="750px"
                              width="500px"
                              class="imgTopItem" />
                         <div class="backgroundTextTopItem">
                             <p class="textTopItem">
-                                Название товара: "Перчатки"
+                                @item.Name
                             </p>
                         </div>
                     </div>
                 </a>
-                <a href="Source/Page/item.html">
-                    <div class="blockTopItem">
-                        <img class="imgTopItem"
-                             src="~/img/indexImg/PremImgBoots.jpg" />
-                        <div class="backgroundTextTopItem">
-                            <p class="textTopItem">
-                                Название товара: "Сапоги"
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="Source/Page/item.html">
-                    <div class="blockTopItem">
-                        <img class="imgTopItem"
-                             src="~/img/indexImg/PremImgCloth.png" />
-                        <div class="backgroundTextTopItem">
-                            <p class="textTopItem">
-                                Название товара: "Спецовка"
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="Source/Page/item.html">
-                    <div class="blockTopItem">
-                        <img class="imgTopItem"
-                             src="~/img/indexImg/PremImgMask.png" />
-                        <div class="backgroundTextTopItem">
-                            <p class="textTopItem">
-                                Название товара: "Маска"
-                            </p>
-                        </div>
-                    </div>
-                </a>
+                }
+
             </div>
         </div>
         <footer>

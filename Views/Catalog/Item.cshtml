@@ -1,0 +1,224 @@
+﻿@model SPF.Models.Items.ItemsSpecification
+
+@{
+    ViewData["MetaDescription"] = "спецпрофстиль";
+    ViewData["MetaKeyWords"] = Model.Item.LowDescription.Replace(' ',',');
+    ViewData["MetaTitle"] = Model.Item.Name;
+    ViewData["Title"] = Model.Item.Name;
+    ViewData["CssLink"] = "item.css";
+}
+<div id="directionOfMainContent">
+    <div id="leftPartOfMainContent">
+    </div>
+    <div id="middlePartOfMainContent">
+        <div id="itemField">
+            <div id="imgItemBlock">
+                <img src="@Model.Item.ImgUrl"
+                     id="imgItem" />
+            </div>
+            <div id="textAboutItem">
+                <h3 id="itemName">
+                    @Model.Item.Name
+                </h3>
+                <p id="itemVendorCode">
+                    Артикул: @Model.Item.Id
+                </p>
+                <p id="minimalDescrition">
+                    @Model.Item.LowDescription
+                </p>
+                @if(Model.Item.PriceLow > 0){
+                    <div id="itemCostBlock">
+                        <p class="discountPrice">
+                            @Model.Item.PriceLow р.
+                        </p>
+                        <p class="oldPrice">
+                            @Model.Item.Price р.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <div id="itemCostBlock">
+                        <p class="price">
+                            @Model.Item.Price р.
+                        </p>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div id="paramsField">
+            <h2>
+                Характеристики
+            </h2>
+            <div id="descriptionField">
+                <h3>
+                    Описание
+                </h3>
+                <p>
+                    @Model.Item.HighDescription
+                </p>
+            </div>
+            <div id="paramsBlock">
+                <h3>
+                    Характеристики
+                </h3>
+                <table id="paramsTable">
+                    @if(Model.Size != null){
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Size)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Size)
+                        </td>
+                    </tr>
+                    }
+                    @if (Model.Height != null)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Height)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Height)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.Material != null)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Material)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Material)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.Model != null)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Model)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Model)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.Color != null)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Color)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Color)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.ProtectiveClass != null)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.ProtectiveClass)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.ProtectiveClass)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.Weight != null)
+                    {
+                            <tr>
+                                <td>
+                                @Html.DisplayNameFor(model => model.Weight)
+                                </td>
+                                <td>
+                                @Html.DisplayFor(model => model.Weight)
+                                </td>
+                            </tr>
+                    }
+                    @if (Model.Character != null)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Character)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(model => model.Character)
+                            </td>
+                        </tr>
+                    }
+                    @if (Model.MaterialInside != null)
+                    {
+                                <tr>
+                                    <td>
+                                @Html.DisplayNameFor(model => model.MaterialInside)
+                                    </td>
+                                    <td>
+                                @Html.DisplayFor(model => model.MaterialInside)
+                                    </td>
+                                </tr>
+                    }
+                    @if (Model.Growth != null)
+                    {
+                            <tr>
+                                <td>
+                                @Html.DisplayNameFor(model => model.Growth)
+                                </td>
+                                <td>
+                                @Html.DisplayFor(model => model.Growth)
+                                </td>
+                            </tr>
+                    }
+                    @if (Model.MatingClass != null)
+                    {
+                                <tr>
+                                    <td>
+                                @Html.DisplayNameFor(model => model.MatingClass)
+                                    </td>
+                                    <td>
+                                @Html.DisplayFor(model => model.MatingClass)
+                                    </td>
+                                </tr>
+                    }
+                    @if (Model.Thread != null)
+                    {
+                                <tr>
+                                    <td>
+                                @Html.DisplayNameFor(model => model.Thread)
+                                    </td>
+                                    <td>
+                                @Html.DisplayFor(model => model.Thread)
+                                    </td>
+                                </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+        <footer>
+            <div id="bottonMenu">
+                <a href="../Page/contacts.html">
+                    <div class="partOfBottonMenu">
+                        Связаться
+                    </div>
+                </a>
+                <a href="../Page/catalog.html">
+                    <div class="partOfBottonMenu">
+                        Товары
+                    </div>
+                </a>
+                <a href="../../index.html">
+                    <div class="partOfBottonMenu">
+                        СпецПрофСтиль
+                    </div>
+                </a>
+            </div>
+        </footer>
+    </div>
+    <div id="rightPartOfMainContent">
+    </div>
+</div>

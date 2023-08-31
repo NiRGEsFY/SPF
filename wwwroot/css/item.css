@@ -10,7 +10,7 @@
 }
 #imgItem{
     width: 200px;
-    height: auto;
+    height: 300px;
     border: 1px solid #00000010;
 }
 #itemName{
@@ -50,6 +50,10 @@
     padding: 0px 20px;
 }
 #descriptionField{
+    margin: 5px 0px;
+}
+#descriptionField{
+    max-width: 700px;
     margin: 5px 0px;
 }
 #paramsBlock{

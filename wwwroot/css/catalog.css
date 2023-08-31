@@ -1,6 +1,9 @@
 li{
     list-style-type: none;
 }
+a:visited{
+    color: #000;
+}
 .buttonFilter{
     display: none;
 }
@@ -109,10 +112,32 @@ input.openList:checked ~ div{
 .catalogItemImg{
     border: 1px solid #dadada7c;
     height: 150px;
-    width: auto;
+    width: 110px;
+}
+.catalogSearchField{
+    display: flex;
+    justify-content: center;
+}
+.catalogSearchName{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.catalogSearchName p{
+    margin: 0;
+}
+.catalogSearch{
+    width: 80%;
+    align-items: center;
+    border-radius: 7px;
+}
+.catalogForm{
+    width: 100%;
 }
 .catalogItem{
     display: flex;
+    justify-content: center;
+    width: 95%;
     padding: 12px;
     align-items: center;
     border: 1px solid #dadadacb;
@@ -121,6 +146,8 @@ input.openList:checked ~ div{
     margin: 5px 0px 5px 0px;
 }
 .catalogItemDescrition{
+    max-width: 400px;
+    width: 400px;
     margin: 5px 10px 5px 15px;
 }
 .catalogItemCost{
@@ -129,6 +156,7 @@ input.openList:checked ~ div{
     justify-content: center;
     align-items: center;
     width: 150px;
+    max-width: 150px;
 }
 .catalogItemVendorCode{
     color: #707070a2;

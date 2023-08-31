@@ -8,6 +8,8 @@ namespace SPF.Models.Items
     {
         public int Id { get; set; }
 
+        public long Top { get; set; }
+
         [Required]
         [MaxLength(100)]
         [Display(Name = "Название")]

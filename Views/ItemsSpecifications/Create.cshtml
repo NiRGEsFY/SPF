@@ -1,0 +1,107 @@
+﻿@model SPF.Models.Items.ItemsSpecification
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ItemsSpecification</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label hidden="hidden" asp-for="ItemId" class="control-label"></label>
+                <input hidden="hidden" asp-for="ItemId" class="form-control" />
+                <span hidden="hidden" asp-validation-for="ItemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden="hidden" asp-for="Name" class="control-label"></label>
+                <input hidden="hidden" asp-for="Name" class="form-control" />
+                <span hidden="hidden" asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Size" class="control-label"></label>
+                <input asp-for="Size" class="form-control" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Material" class="control-label"></label>
+                <input asp-for="Material" class="form-control" />
+                <span asp-validation-for="Material" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model" class="control-label"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProtectiveClass" class="control-label"></label>
+                <input asp-for="ProtectiveClass" class="form-control" />
+                <span asp-validation-for="ProtectiveClass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" data-val="false" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Character" class="control-label"></label>
+                <input asp-for="Character" class="form-control" />
+                <span asp-validation-for="Character" class="text-danger"></span>
+            </div>
+            @if (Model.Name == "Ботинки" || Model.Name == "Сапоги")
+            {
+                <div class="form-group">
+                    <label asp-for="MaterialInside" class="control-label"></label>
+                    <input asp-for="MaterialInside" class="form-control" />
+                    <span asp-validation-for="MaterialInside" class="text-danger"></span>
+                </div>
+            }
+            @if (Model.Name == "Сапоги")
+            {
+                <div class="form-group">
+                    <label asp-for="Height" class="control-label"></label>
+                    <input asp-for="Height" class="form-control" />
+                    <span asp-validation-for="Height" class="text-danger"></span>
+                </div>
+            }
+            @if (Model.Name == "СпецОдежда")
+            {
+                <div class="form-group">
+                    <label asp-for="Growth" class="control-label"></label>
+                    <input asp-for="Growth" class="form-control" />
+                    <span asp-validation-for="Growth" class="text-danger"></span>
+                </div>
+            }
+            @if (Model.Name == "Перчатки")
+            {
+                <div class="form-group">
+                    <label asp-for="MatingClass" class="control-label"></label>
+                    <input asp-for="MatingClass" class="form-control" />
+                    <span asp-validation-for="MatingClass" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Thread" class="control-label"></label>
+                    <input asp-for="Thread" class="form-control" />
+                    <span asp-validation-for="Thread" class="text-danger"></span>
+                </div>
+            }
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
