@@ -1,0 +1,20 @@
+.adminMenu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.adminButtonList{
+    display: flex;
+    flex-direction: column;
+}
+.adminButtonList a{
+    background-color: #1f3461;
+    padding: 10px;
+    border: 1px solid #222;
+    margin: 2px 0px 2px 0px;
+    font-size: 20px;
+}
+.adminButtonList a:hover{
+    background-color: #124fc0;
+}

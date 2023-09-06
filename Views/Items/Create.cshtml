@@ -1,71 +1,73 @@
 ﻿@model SPF.Models.Items.Item
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Каталог";
+    ViewData["CssLink"] = "admin_item_create.css";
 }
 
-<h1>Create</h1>
+<div class="itemCreateField">
+    <div class="topItemMenu">
+        <h1>Создание</h1>
 
-<h4>Item</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" enctype="multipart/form-data" method="post">
-            @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-            {
+        <h4>Вещи</h4>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form class="itemCreateInputField" asp-action="Create" enctype="multipart/form-data" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
+                <div class="itemInputField">
                     <label asp-for="Name" class="control-label"></label>
                     <input asp-for="Name" class="form-control" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="itemInputField">
                     <label class="control-label">Тип</label>
                     @Html.DropDownList("TypeName")
                 </div>
-                <div class="form-group">
+                <div class="LowDescription">
                     <label asp-for="LowDescription" class="control-label"></label>
-                    <input asp-for="LowDescription" class="form-control" />
+                    <textarea asp-for="LowDescription" class="form-control" /></textarea>
                     <span asp-validation-for="LowDescription" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="HighDescription">
                     <label asp-for="HighDescription" class="control-label"></label>
-                    <input asp-for="HighDescription" class="form-control" />
+                    <textarea asp-for="HighDescription" class="form-control"></textarea>
                     <span asp-validation-for="HighDescription" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="itemInputField">
                     <label asp-for="Price" class="control-label"></label>
                     <input asp-for="Price" data-val="false" class="form-control" />
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="itemInputField">
                     <label asp-for="PriceLow" class="control-label"></label>
                     <input asp-for="PriceLow" data-val="false" class="form-control" />
                     <span asp-validation-for="PriceLow" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="hidden">
                     <label asp-for="ImgUrl" hidden="hidden" class="control-label"></label>
                     <input asp-for="ImgUrl" hidden="hidden" value="None" class="form-control" />
                     <span asp-validation-for="ImgUrl" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="hidden">
                     <label asp-for="ImgListUrl" hidden="hidden" class="control-label"></label>
                     <input asp-for="ImgListUrl" hidden="hidden" value="None" class="form-control" />
                     <span asp-validation-for="ImgListUrl" class="text-danger"></span>
                 </div>
-                <div>
+                <div class="itemInputImg">
                     <input type="file" name="UploadImg" />
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                <div class="itemInputButton">
+                    <input type="submit" value="Создать" class="btn btn-primary" />
                 </div>
-            }
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
 
 @section Scripts {

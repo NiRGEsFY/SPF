@@ -1,61 +1,82 @@
 ﻿@model IEnumerable<SPF.Models.Items.Item>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Каталог";
+    ViewData["CssLink"] = "admin_item.css";
 }
+<div class="itemField">
+    <div class="itemMenu">
+        <div class="menuName">
+            <h1>Каталог</h1>
+        </div>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Добавить вещь</a>
-</p>
-<p>
-    <a asp-controller="Admin" asp-action="Index"> Панель администратора</a>
-</p>
-@using (Html.BeginForm())
-{
-    <p>
-        Id: @Html.TextBox("searchId") <br />
-    </p>
-    <p>
-        Название: @Html.TextBox("searchName") <br />
-        <input type="submit" value="Filter" />
-    </p>
-}
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PriceLow)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+        <div class="itemMenuButton">
+            <div class="itemButton">
+                <a asp-action="Create">Добавить вещь</a>
+            </div>
+            <div class="itemButton">
+                <a asp-controller="Admin" asp-action="Index"> Панель администратора</a>
+            </div>
+        </div>
+        <form class="menuInput">
+        <div class="inputField">
+            <p>
+                    Id:
+            </p> 
+            <input name="searchId"/> <br />
+        </div>
+        <div class="inputField">
+            <p>
+                    Название:
+            </p> 
+            <input name="searchName" /> <br />
+        </div>
+            <input class="inputButton" type="submit" value="Поиск" />
+        </form>
+    </div>
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PriceLow)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PriceLow)
+                </th>
+                <th>
+                    Управление
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriceLow)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

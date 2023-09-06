@@ -1,6 +1,13 @@
 ﻿@{
     @model SPF.Views.Admin.IndexModel
 }
+@{
+    ViewData["MetaDescription"] = "";
+    ViewData["MetaKeyWords"] = "";
+    ViewData["MetaTitle"] = "";
+    ViewData["Title"] = "Доступ запрещен";
+    ViewData["CssLink"] = "admin_admin.css";
+}
 <h1>Доступ запрещен</h1>
 
 <a asp-controller="Home" asp-action="Index">Главная страница</a>

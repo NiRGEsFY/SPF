@@ -1,7 +1,13 @@
-﻿@page
-@model SPF.Views.Admin.AdministratorModel
+﻿@model SPF.Views.Admin.AdministratorModel
+
 @{
+    ViewData["Title"] = "Админ";
+    ViewData["CssLink"] = "admin_admin.css";
 }
-<h1>Администратор</h1>
-<a asp-controller="Items" asp-action="Index">Редактор Вещей</a>
-<a asp-controller="Admin" asp-action="Index">Панель Администратора</a>
+<div class="adminMenu">
+    <h1>Администратор</h1>
+    <div class="adminButtonList">
+        <a asp-controller="Items" asp-action="Index">Редактор Вещей</a>
+        <a asp-controller="Admin" asp-action="Index">Панель Администратора</a>
+    </div>
+</div>
