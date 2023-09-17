@@ -93,10 +93,20 @@ namespace SPF.Controllers
             {
                 return NotFound();
             }
+            ModelState.Remove("Password");
             if (ModelState.IsValid)
             {
                 ApplicationUser user = _userManager.Users.FirstOrDefault(o => o.Id == id);
-                if (user != null)
+                if (newUser.Password == "" || newUser.Password == null)
+                {
+                    user.UserName = newUser.UserName;
+                    user.FirstName = newUser.FirstName;
+                    user.LastName = newUser.LastName;
+                    user.PostUser = newUser.PostUser;
+                    _userManager.UpdateAsync(user).GetAwaiter().GetResult();
+                    return RedirectToAction("Index");
+                }
+                if (user != null && newUser.Password != "")
                 {
                     var _passwordValidator =
                         HttpContext.RequestServices.GetService(typeof(IPasswordValidator<ApplicationUser>)) as IPasswordValidator<ApplicationUser>;
@@ -114,6 +124,7 @@ namespace SPF.Controllers
                         user.PostUser = newUser.PostUser;
                         user.PasswordHash = _passwordHasher.HashPassword(user, newUser.Password);
                         _userManager.UpdateAsync(user).GetAwaiter().GetResult();
+                        return RedirectToAction("Index");
                     }
                     else
                     {
