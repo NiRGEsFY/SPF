@@ -1,64 +1,66 @@
 ﻿@model SPF.Models.Items.Item
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Редактирование";
+    ViewData["CssLink"] = "admin_item_create.css";
 }
-
-<h1>Edit</h1>
-
-<h4>Item</h4>
+<div class="itemCreateField">
+    <div class="topItemMenu">
+        <h1>Редактирование</h1>
+        <h4>@Model.Name</h4>
+    </div>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form class="itemCreateInputField" asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="LowDescription">
                 <label asp-for="LowDescription" class="control-label"></label>
-                <input asp-for="LowDescription" class="form-control" />
+                <textarea asp-for="LowDescription" class="form-control"></textarea>
                 <span asp-validation-for="LowDescription" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="HighDescription">
                 <label asp-for="HighDescription" class="control-label"></label>
-                <input asp-for="HighDescription" class="form-control" />
+                <textarea asp-for="HighDescription" class="form-control"></textarea>
                 <span asp-validation-for="HighDescription" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="Price" class="control-label"></label>
                 <input asp-for="Price" data-val="false" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="PriceLow" class="control-label"></label>
                 <input asp-for="PriceLow" data-val="false" class="form-control" />
                 <span asp-validation-for="PriceLow" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="ImgUrl" class="control-label"></label>
                 <input asp-for="ImgUrl" class="form-control" />
                 <span asp-validation-for="ImgUrl" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="ImgListUrl" class="control-label"></label>
                 <input asp-for="ImgListUrl" class="form-control" />
                 <span asp-validation-for="ImgListUrl" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div class="underButton">
     <a asp-controller="Items" asp-action="Details" asp-route-id="@Model.Id">К Вещи</a>
 </div>
-
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

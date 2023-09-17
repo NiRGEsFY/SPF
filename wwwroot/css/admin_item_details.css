@@ -1,0 +1,56 @@
+
+h1{
+    text-align: center;
+}
+h3{
+    margin: 0px;
+}
+dl{
+    font-size: 20px;
+}
+dd{
+    color: #000;
+    font-size: 16px;
+    margin: 0px 0px 0px 10px;
+}
+.detailsField{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.detailsField a{
+    color: #333;
+    transition: 0.4s;
+}
+.detailsField a:hover{
+    color: #000;
+    text-decoration: underline;
+}
+.detailsField dd{
+    border-bottom: 2px solid #222;
+    margin-bottom: 10px;
+}
+.detailsDescription{
+    padding-left: 10px;
+    border-left: 2px solid #222;
+}
+.detailsParams,
+.detailsDescription{
+    height: 100%;
+    margin: 0px 10px 0px 10px;
+    word-wrap: break-word;
+}
+.detailsParams{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.detailsDescription{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.underMenu{
+    margin-top: 0px;
+    margin-bottom: 40px;
+}

@@ -46,7 +46,7 @@ namespace SPF.Models.Items
         public decimal? Weight { get; set; }
 
         [Required]
-        [MaxLength(400)]
+        [MaxLength(2000)]
         [Display(Name = "Особенность")]
         public string? Character { get; set; }
 

@@ -1,77 +1,74 @@
 ﻿@model SPF.Models.Items.ItemsSpecification
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Детали";
+    ViewData["CssLink"] = "admin_item_details.css";
 }
-
-<h1>Детали</h1>
-
-<div>
-    <h4>Параметры</h4>
-    <div>
-        <hr />
-        <dl class="row">
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Item.Id)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Item.Id)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Item.Name)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Item.Name)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Item.LowDescription)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Item.LowDescription)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Item.HighDescription)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Item.HighDescription)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Item.Price)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Item.Price)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Item.PriceLow)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Item.PriceLow)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Item.ImgUrl)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Item.ImgUrl)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Item.ImgListUrl)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Item.ImgListUrl)
-            </dd>
-            <dt>Изображение</dt>
-            <dd>
-                <img src="@Model.Item.ImgUrl" width="200px" height="200px" />
-            </dd>
-        </dl>
+<h1>Информация</h1>
+<div class="detailsField">
+    <div class="detailsParams">
+    <h3>Параметры</h3>
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Item.Id)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Item.Id)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Item.Name)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Item.Name)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Item.LowDescription)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Item.LowDescription)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Item.HighDescription)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Item.HighDescription)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Item.Price)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Item.Price)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Item.PriceLow)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Item.PriceLow)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Item.ImgUrl)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Item.ImgUrl)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Item.ImgListUrl)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Item.ImgListUrl)
+                </dd>
+                <dt>Изображение</dt>
+                <dd>
+                    <img src="@Model.Item.ImgUrl" width="200px" height="200px" />
+                </dd>
+            </dl>
+        <div class="underMenu">
+            <a asp-action="Edit" asp-route-id="@Model?.Item?.Id">Ред. Параметры</a> |
+            <a asp-action="Index">К Списку</a>
+        </div>
     </div>
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model?.Item?.Id">Редактировать Параметры</a> |
-        <a asp-action="Index">К Списку</a>
-    </div>
-    <h4>Описание</h4>
-    <div>
-        <hr />
+    <div class="detailsDescription">
+    <h3>Описание</h3>
         <dl class="row">
             @if (Model.Name != null)
             {
@@ -200,9 +197,9 @@
                 </dd>
             }
         </dl>
+        <div class="underMenu">
+            <a asp-controller="ItemsSpecifications" asp-action="Edit" asp-route-id="@Model?.Id">Ред. Описание</a> |
+            <a asp-action="Index">К Списку</a>
+        </div>
     </div>
-</div>
-<div>
-    <a asp-controller="ItemsSpecifications" asp-action="Edit" asp-route-id="@Model?.Id">Редактировать Описание</a> |
-    <a asp-action="Index">К Списку</a>
 </div>

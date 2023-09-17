@@ -111,7 +111,7 @@ namespace SPF.Controllers
                 return NotFound();
             }
 
-            var itemsSpecification = await _context.ItemsSpecification.FindAsync(id);
+            var itemsSpecification = _context.ItemsSpecification.Include(x => x.Item).Where(x => x.Id == id).FirstOrDefault();
             if (itemsSpecification == null)
             {
                 return NotFound();
@@ -131,7 +131,10 @@ namespace SPF.Controllers
             {
                 return NotFound();
             }
-
+            ModelState.Remove("Id");
+            ModelState.Remove("ItemId");
+            ModelState.Remove("Name");
+            ModelState.Remove("Item");
             if (ModelState.IsValid)
             {
                 try
@@ -150,7 +153,7 @@ namespace SPF.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Redirect("/Items/Index");
             }
             ViewData["ItemId"] = new SelectList(_context.Items, "Id", "HighDescription", itemsSpecification.ItemId);
             return View(itemsSpecification);

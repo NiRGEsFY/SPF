@@ -2,98 +2,114 @@
 
 @{
     ViewData["Title"] = "Edit";
+    ViewData["CssLink"] = "admin_item_create.css";
 }
 
-<h1>Edit</h1>
+<div class="itemCreateField">
+    <div class="topItemMenu">
+        <h1>Edit</h1>
 
-<h4>ItemsSpecification</h4>
+        <h4>@Model.Item.Name</h4>
+    </div>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+            <form class="itemCreateInputField" asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            <div class="itemInputField">
                 <label hidden="hidden" asp-for="ItemId" class="control-label"></label>
                 <select hidden="hidden" asp-for="ItemId" class="form-control" asp-items="ViewBag.ItemId"></select>
                 <span hidden="hidden" asp-validation-for="ItemId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="Size" class="control-label"></label>
                 <input asp-for="Size" class="form-control" />
                 <span asp-validation-for="Size" class="text-danger"></span>
             </div>
-            <div class="form-group">
+                <div class="LowDescription">
                 <label asp-for="Material" class="control-label"></label>
-                <input asp-for="Material" class="form-control" />
+                <textarea asp-for="Material" class="form-control"></textarea>
                 <span asp-validation-for="Material" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="Model" class="control-label"></label>
                 <input asp-for="Model" class="form-control" />
                 <span asp-validation-for="Model" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="Color" class="control-label"></label>
                 <input asp-for="Color" class="form-control" />
                 <span asp-validation-for="Color" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="ProtectiveClass" class="control-label"></label>
                 <input asp-for="ProtectiveClass" class="form-control" />
                 <span asp-validation-for="ProtectiveClass" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="itemInputField">
                 <label asp-for="Weight" class="control-label"></label>
                 <input asp-for="Weight" data-val="false" class="form-control" />
                 <span asp-validation-for="Weight" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="LowDescription">
                 <label asp-for="Character" class="control-label"></label>
-                <input asp-for="Character" class="form-control" />
+                <textarea asp-for="Character" class="form-control"></textarea>
                 <span asp-validation-for="Character" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MaterialInside" class="control-label"></label>
-                <input asp-for="MaterialInside" class="form-control" />
-                <span asp-validation-for="MaterialInside" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Growth" class="control-label"></label>
-                <input asp-for="Growth" class="form-control" />
-                <span asp-validation-for="Growth" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MatingClass" class="control-label"></label>
-                <input asp-for="MatingClass" class="form-control" />
-                <span asp-validation-for="MatingClass" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Thread" class="control-label"></label>
-                <input asp-for="Thread" class="form-control" />
-                <span asp-validation-for="Thread" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Height" class="control-label"></label>
-                <input asp-for="Height" class="form-control" />
-                <span asp-validation-for="Height" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            @if (Model.Name == "Ботинки" || Model.Name == "Сапоги")
+            {
+                <div class="itemInputField">
+                    <label asp-for="MaterialInside" class="control-label"></label>
+                    <input asp-for="MaterialInside" class="form-control" />
+                    <span asp-validation-for="MaterialInside" class="text-danger"></span>
+                </div>
+            }
+            @if (Model.Name == "СпецОдежда")
+            {
+                <div class="itemInputField">
+                    <label asp-for="Growth" class="control-label"></label>
+                    <input asp-for="Growth" class="form-control" />
+                    <span asp-validation-for="Growth" class="text-danger"></span>
+                </div>
+            }
+            @if (Model.Name == "Перчатки")
+            {
+                <div class="itemInputField">
+                    <label asp-for="MatingClass" class="control-label"></label>
+                    <input asp-for="MatingClass" class="form-control" />
+                    <span asp-validation-for="MatingClass" class="text-danger"></span>
+                </div>
+                <div class="itemInputField">
+                    <label asp-for="Thread" class="control-label"></label>
+                    <input asp-for="Thread" class="form-control" />
+                    <span asp-validation-for="Thread" class="text-danger"></span>
+                </div>
+            }
+            @if (Model.Name == "Сапоги")
+            {
+                <div class="itemInputField">
+                    <label asp-for="Height" class="control-label"></label>
+                    <input asp-for="Height" class="form-control" />
+                    <span asp-validation-for="Height" class="text-danger"></span>
+                </div>
+            }
+            <div class="itemInputField">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div class="underButton">
     <a asp-controller="Items" asp-action="Details" asp-route-id="@Model.ItemId">К Вещи</a>
 </div>
-
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

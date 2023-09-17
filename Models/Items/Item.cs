@@ -1,9 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Diagnostics.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
 
 namespace SPF.Models.Items
 {
+    [Index(nameof(HighDescription), IsUnique = true)]
     public class Item
     {
         public int Id { get; set; }
@@ -21,6 +25,7 @@ namespace SPF.Models.Items
         public string LowDescription { get; set; }
 
         [Required]
+        [MaxLength(4000)]
         [Display(Name = "Большое описание")]
         public string HighDescription { get; set; }
 
@@ -28,6 +33,8 @@ namespace SPF.Models.Items
         [Column(TypeName = "decimal(18,2)")]
         [Display(Name = "Цена")]
         public decimal Price { get; set; }
+
+        [AllowNull]
         [Column(TypeName = "decimal(18,2)")]
         [Display(Name = "Цена со скидкой")]
         public decimal PriceLow { get; set; }

@@ -13,11 +13,12 @@ namespace SPF.Controllers
     public class ItemsController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly string _folderWay = @"E:\Repos\SPF\wwwroot";
+        private readonly string _folderWay;
 
-        public ItemsController(ApplicationDbContext context)
+        public ItemsController(ApplicationDbContext context, IConfiguration configRoot)
         {
             _context = context;
+            _folderWay = configRoot["FolderString:ImgWay"] ?? throw new InvalidOperationException("Connection string 'FolderString:ImgWay' not found.");
         }
 
         public async Task<IActionResult> Index(string searchId,string searchName)
@@ -63,6 +64,7 @@ namespace SPF.Controllers
         public async Task<IActionResult> Create(int TypeName, [Bind("Id,Name,LowDescription,HighDescription,Price,PriceLow,ImgUrl,ImgListUrl")] Item item, IFormFile UploadImg = null)
         {
             ViewData["TypeName"] = new SelectList(_context.Types, "Id", "Name");
+            ModelState.Remove("PriceLow");
             if (ModelState.IsValid && UploadImg != null)
             {
                 _context.Add(item);

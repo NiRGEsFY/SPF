@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
 using SPF.Entities;
+using SPF.Models;
 
 namespace SPF.Controllers
 {
@@ -22,8 +22,6 @@ namespace SPF.Controllers
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             ViewBag.Login = user.UserName;
             ViewBag.Post = user.PostUser;
-
-
             return View();
         }
         [Authorize(Policy = "Administrator")]
@@ -76,14 +74,4 @@ namespace SPF.Controllers
             return View();
         }
     }
-    public class LoginViewModel
-    {
-        [Required]
-        public string UserName { get; set; }
-        [Required]
-        public string Password { get; set; }
-        [Required]
-        public string ReturnUrl { get; set; }
-    }
-
 }
