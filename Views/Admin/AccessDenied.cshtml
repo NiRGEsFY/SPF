@@ -6,9 +6,16 @@
     ViewData["MetaKeyWords"] = "";
     ViewData["MetaTitle"] = "";
     ViewData["Title"] = "Доступ запрещен";
-    ViewData["CssLink"] = "admin_admin.css";
+    ViewData["CssLink"] = "admin_accessDenied.css";
 }
-<h1>Доступ запрещен</h1>
+<div class="accessDeniedField">
+    <div class="accessDeniedBoard">
+        <h1>Доступ запрещен</h1>
 
-<a asp-controller="Home" asp-action="Index">Главная страница</a>
-<a asp-controller="Admin" asp-action="Index">Панель Администратора</a>
+        <div class="buttonMenu">
+            <a asp-controller="Home" asp-action="Index">Главная страница</a>
+            <a asp-controller="Admin" asp-action="Index">Панель Администратора</a>
+            <a asp-controller="Admin" class="adminA" asp-action="LogOff">Выйти из аккаунта</a>
+        </div>
+    </div>
+</div>

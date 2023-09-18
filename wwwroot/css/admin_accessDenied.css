@@ -1,0 +1,46 @@
+.accessDeniedField{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.accessDeniedBoard{
+    padding: 15px;
+    width: 33%;
+    height: 100%;
+    box-shadow: 0px 5px 35px #333;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.accessDeniedBoard h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.accessDeniedBoard a{
+    background-color: #1f3461;
+    min-height: 30px;
+    min-width: 250px;
+    max-width: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #222;
+    margin: 4px 15px 4px 15px;
+    font-size: 20px;
+    text-wrap:nowrap;
+}
+.accessDeniedBoard a:hover{
+    background-color: #124fc0;
+}
+.buttonMenu{
+    margin: 15px 0px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

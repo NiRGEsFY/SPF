@@ -8,6 +8,10 @@
 <div class="detailsField">
     <div class="detailsParams">
     <h3>Параметры</h3>
+        <div class="topMenu">
+            <a asp-action="Edit" asp-route-id="@Model?.Item?.Id">Ред. Параметры</a> |
+            <a asp-action="Index">К Списку</a>
+        </div>
             <dl class="row">
                 <dt class="col-sm-2">
                     @Html.DisplayNameFor(model => model.Item.Id)
@@ -62,13 +66,14 @@
                     <img src="@Model.Item.ImgUrl" width="200px" height="200px" />
                 </dd>
             </dl>
-        <div class="underMenu">
-            <a asp-action="Edit" asp-route-id="@Model?.Item?.Id">Ред. Параметры</a> |
-            <a asp-action="Index">К Списку</a>
-        </div>
+
     </div>
     <div class="detailsDescription">
     <h3>Описание</h3>
+        <div class="topMenu">
+            <a asp-controller="ItemsSpecifications" asp-action="Edit" asp-route-id="@Model?.Id">Ред. Описание</a> |
+            <a asp-action="Index">К Списку</a>
+        </div>
         <dl class="row">
             @if (Model.Name != null)
             {
@@ -197,9 +202,5 @@
                 </dd>
             }
         </dl>
-        <div class="underMenu">
-            <a asp-controller="ItemsSpecifications" asp-action="Edit" asp-route-id="@Model?.Id">Ред. Описание</a> |
-            <a asp-action="Index">К Списку</a>
-        </div>
     </div>
 </div>

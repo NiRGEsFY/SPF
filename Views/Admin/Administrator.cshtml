@@ -5,9 +5,12 @@
     ViewData["CssLink"] = "admin_admin.css";
 }
 <div class="adminMenu">
-    <h1>Администратор</h1>
-    <div class="adminButtonList">
-        <a asp-controller="Items" asp-action="Index">Редактор Вещей</a>
-        <a asp-controller="Admin" asp-action="Index">Панель Администратора</a>
+    <div class="adminBoard">
+        <h1>Администратор</h1>
+        <div class="adminButtonList">
+            <a asp-controller="Items" asp-action="Index">Редактор Вещей</a>
+            <a asp-controller="UserEdit" asp-action="Index">Редактор Пользователей</a>
+            <a asp-controller="Admin" asp-action="Index">Панель Администратора</a>
+        </div>
     </div>
 </div>

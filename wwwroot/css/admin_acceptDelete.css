@@ -1,0 +1,62 @@
+.acceptDeleteField{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.acceptDeleteToBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.acceptDeleteToBar h1{
+    margin: 0px;
+}
+.acceptDeleteToBar h3{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.acceptDeleteToBar h5{
+    color: #888;
+    font-weight: lighter;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+.acceptDeleteInfo dt{
+    font-size: 20px;
+}
+.acceptDeleteInfo dd{
+    border-bottom: 2px solid #222;
+    margin: 0px 0px 0px 15px;
+    text-wrap: wrap;
+    min-width: 100px;
+    max-width: 300px;
+}
+.confirmDelete{
+    display: flex;
+    flex-direction: column;
+}
+.confirmDelete input{
+    width: 50%;
+    background-color: #1f3461;
+    color: #ddd;
+    border: none;
+    height: 25px;
+    border-radius: 5px;
+    align-self: center;
+    transition: 0.4s;
+}
+.confirmDelete input:hover{
+    background-color: #124fc0;
+}
+.confirmDelete a{
+    margin-top: 5px;
+    text-align: center;
+    color: #222;
+}
+.confirmDelete a:hover{
+    text-decoration: underline;
+}
