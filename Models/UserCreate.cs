@@ -19,5 +19,6 @@ namespace SPF.Models
         [Required]
         [Display(Name = "Пароль")]
         public string Password { get; set; }
+        public string Role { get; set; }
     }
 }

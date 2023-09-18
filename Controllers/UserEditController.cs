@@ -22,9 +22,13 @@ namespace SPF.Controllers
             _signInManager = signInManager;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string role)
         {
-            var users = _userManager.Users.Take(20).Where(o => o.PostUser != "Директор");
+            var users = _userManager.Users;
+            if (role == "admin")
+                users = _userManager.Users.Take(20).Where(o => o.PostUser == "Директор" || o.PostUser == "Система");
+            else
+                users = _userManager.Users.Take(20).Where(o => o.PostUser != "Директор" && o.PostUser != "Система");
             return View(users);
         }
 
@@ -33,8 +37,9 @@ namespace SPF.Controllers
             return View();
         }
 
-        public ActionResult Create()
+        public ActionResult Create(string role)
         {
+            ViewBag.Role = role;
             return View();
         }
 
@@ -42,6 +47,7 @@ namespace SPF.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(UserCreate _user)
         {
+            ModelState.Remove("Role");
             if (ModelState.IsValid)
             {
                 ApplicationUser user = new ApplicationUser
@@ -54,7 +60,10 @@ namespace SPF.Controllers
                 var result = _userManager.CreateAsync(user, _user.Password).GetAwaiter().GetResult();
                 if (result.Succeeded)
                 {
-                    _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "Moder")).GetAwaiter().GetResult();
+                    if (_user.Role == "admin")
+                        _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "Administrator")).GetAwaiter().GetResult();
+                    else
+                        _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "Moder")).GetAwaiter().GetResult();
                 }
                 return RedirectToAction("Index", "UserEdit");
             }

@@ -36,6 +36,11 @@
             <input asp-for="Password" class="form-control" />
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
+        <div class="itemInputField">
+            <label hidden="hidden" asp-for="Role" class="control-label"></label>
+            <input hidden="hidden" asp-for="Role" asp-items="ViewBag.Role" class="form-control" />
+            <span hidden="hidden" asp-validation-for="Role" class="text-danger"></span>
+        </div>
         <div class="itemInputButton">
             <input type="submit" value="Создать" class="btn btn-primary" />
         </div>
