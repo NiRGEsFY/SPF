@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
 using SPF.Data;
 
 namespace SPF.Controllers
@@ -13,8 +15,9 @@ namespace SPF.Controllers
         {
             _context = context;
         }
-        public IActionResult Index(string searchName, string[] Type)
+        public async Task<IActionResult> Index(string searchName, string[] Type)
         {
+            await _context.SaveChangesAsync();
             var item = from i in _context.Items
                        select i;
             if (Type.Length > 0)
@@ -36,18 +39,20 @@ namespace SPF.Controllers
             {
                 item = item.Where(o => o.Name.Contains(searchName));
             }
-            return View(item.OrderByDescending(o => o.Top).ThenBy(o => o.Id).Take(200));
+            item = item.OrderByDescending(o => o.Top).ThenBy(o => o.Id).Take(30);
+            await _context.SaveChangesAsync();
+            return View(item);
         }
-        public IActionResult Item(int? id)
+        public async Task<IActionResult> Item(int? id)
         {
             if (id == null || _context.Items == null)
             {
                 return NotFound();
             }
 
-            var item = _context.ItemsSpecification
+            var item = await _context.ItemsSpecification
                 .Include(x => x.Item)
-                .Where(o => o.Item.Id == id).FirstOrDefault();
+                .Where(o => o.Item.Id == id).FirstAsync();
             if (item == null)
             {
                 return NotFound();

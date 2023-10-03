@@ -20,14 +20,12 @@ namespace SPF.Controllers
             _context = context;
         }
 
-        // GET: ItemsSpecifications
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.ItemsSpecification.Include(i => i.Item);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: ItemsSpecifications/Create
         public IActionResult Create(int id)
         {
             if (_context.Items.Where(o => o.Id == id).FirstOrDefault() != null)
@@ -103,7 +101,6 @@ namespace SPF.Controllers
             return View(itemsSpecification);
         }
 
-        // GET: ItemsSpecifications/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.ItemsSpecification == null)
@@ -120,9 +117,6 @@ namespace SPF.Controllers
             return View(itemsSpecification);
         }
 
-        // POST: ItemsSpecifications/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,ItemId,Name,Size,Material,Model,Color,ProtectiveClass,Weight,Character,MaterialInside,Growth,MatingClass,Thread,Height")] ItemsSpecification itemsSpecification)

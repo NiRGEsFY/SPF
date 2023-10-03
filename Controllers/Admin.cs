@@ -51,7 +51,7 @@ namespace SPF.Controllers
             var user = await _userManager.FindByNameAsync(model.UserName);
             if (user == null)
             {
-                ModelState.AddModelError("", "User Not Found");
+                ModelState.AddModelError("", "Пользователь не найден");
                 return View(model);
             }
             var result = await _signInManager.PasswordSignInAsync(user, model.Password, false, false);
@@ -59,6 +59,7 @@ namespace SPF.Controllers
             {
                 return Redirect(model.ReturnUrl);
             }
+            ModelState.AddModelError("", "Пароль не верный");
             return View(model);
 
 

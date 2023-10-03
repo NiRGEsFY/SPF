@@ -501,12 +501,23 @@ input.searchButton{
         height: 0px;
     }
     #menuButtonImgField{
-        margin: 0px;
-        width: 0px;
+        display: none;
+    }
+    .searchInput{
+        display: none;
     }
     .menuSearchArea{
         width: 0px;
         margin: 0px;
+    }
+    .searchField{
+        display: none;
+    }
+    .searchName{
+        display: none;
+    }
+    .itemFindForm{
+        display: none;
     }
 }
 @media only screen and (max-width: 375px ){

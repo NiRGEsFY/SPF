@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SPF.Models.Items
 {
-    [Index(nameof(HighDescription), IsUnique = true)]
+    [Index(nameof(LowDescription), IsUnique = true)]
     public class Item
     {
         public int Id { get; set; }

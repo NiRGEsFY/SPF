@@ -4,6 +4,8 @@ using Microsoft.Extensions.Options;
 using SPF.Data;
 using SPF.Entities;
 using System.Security.Claims;
+using MySqlConnector;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace SPF
 {
@@ -16,18 +18,20 @@ namespace SPF
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options
-                    .UseSqlServer(connectionString)).AddIdentity<ApplicationUser, ApplicationRole>(config =>
-                    {
-                        config.Password.RequireDigit = false;
-                        config.Password.RequireLowercase = false;
-                        config.Password.RequireUppercase = false;
-                        config.Password.RequireNonAlphanumeric = false;
-                        config.Password.RequiredLength = 8;
-                    })
-                    .AddEntityFrameworkStores<ApplicationDbContext>();
+                    .UseMySql(
+                        connectionString,
+                        new MySqlServerVersion(new Version(8, 0, 34))
+                    ));
 
-
-
+            builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(config =>
+            {
+                config.Password.RequireDigit = false;
+                config.Password.RequireLowercase = false;
+                config.Password.RequireUppercase = false;
+                config.Password.RequireNonAlphanumeric = false;
+                config.Password.RequiredLength = 8;
+            })
+            .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.Configure<ApplicationDbContext>(options =>
             {
                 options.Database.Migrate();

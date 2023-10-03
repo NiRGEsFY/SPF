@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SPF.Data;
+using SPF.Entities;
 using SPF.Models;
+using SPF.MyLibrary;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace SPF.Controllers
 {
@@ -10,11 +14,14 @@ namespace SPF.Controllers
     {
         private readonly ApplicationDbContext _context;
 
+        private readonly UserManager<ApplicationUser> _userManager;
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ApplicationDbContext context, ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context, ILogger<HomeController> logger, UserManager<ApplicationUser> userManager)
         {
             _logger = logger;
+            _userManager = userManager;
             _context = context;
         }
 

@@ -71,7 +71,7 @@ namespace SPF.Controllers
                 await _context.SaveChangesAsync();
                 var itemContext = _context.Items.Where(o => o.HighDescription == item.HighDescription && o.LowDescription == item.LowDescription).FirstOrDefault();
                 var itemId = itemContext.Id;
-                string smallWay = @$"\img\{itemContext.Id}.{UploadImg.FileName.Split('.').Last()}";
+                string smallWay = @$"/img/item/{itemContext.Id}.{UploadImg.FileName.Split('.').Last()}";
                 string fullWay = _folderWay + smallWay;
                 itemContext.ImgUrl = smallWay;
                 itemContext.ImgListUrl = fullWay;

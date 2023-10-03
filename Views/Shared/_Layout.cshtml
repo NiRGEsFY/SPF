@@ -13,13 +13,14 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/topBar.css" />
     <link rel="stylesheet" href="~/css/@ViewData["CssLink"]" />
+    <link rel="shortcut icon" href="~/favicon.png" type="image/png">
 </head>
 <body class="body">
     <header>
         <div id="boardOfInforamationAndLogo">
             <a asp-controller="Home" asp-action="Index">
                 <div id="logoDirection">
-                    <img src="~/img/indeximg/logo.png"
+                    <img src="~/img/index_img/logo.png"
                          id="mainLogo" />
                     <p id="nameOfCompany">
                         СпецПрофСтиль
@@ -31,7 +32,7 @@
                 <div id="boardOfInforamation">
                     <div id="mailAndAddress">
                         <div id="addressDirection">
-                            <img src="~/img/indeximg/miniimgmark.png"
+                            <img src="~/img/index_img/mini_img_mark.png"
                              id="adressImage" />
                             <p id="addressText">
                                 Минская обл., Солигорский р-н,<br>
@@ -39,7 +40,7 @@
                             </p>
                         </div>
                         <div id="mailDirection">
-                            <img src="~/img/indeximg/miniimgmail.png"
+                            <img src="~/img/index_img/mini_img_mail.png"
                              id="mailImage" />
                             <p id="mailText">
                                 sps2011s@yandex.by
@@ -47,7 +48,7 @@
                         </div>
                     </div>
                     <div id="workTime">
-                        <img src="~/img/indeximg/miniimgclock.png"
+                        <img src="~/img/index_img/mini_img_clock.png"
                          id="clockImage" />
                         <div id="workTimeTextDirection">
                             <p id="workMondayToThursday">
@@ -60,14 +61,14 @@
                     </div>
                     <div id="listPhoneNumbers">
                         <div id="cityPhone">
-                            <img src="~/img/indeximg/miniimgphone.png"
+                            <img src="~/img/index_img/mini_img_phone.png"
                              id="cityPhoneImage" />
                             <p id="cityPhoneDigits">
                                 8-017-350-20-59
                             </p>
                         </div>
                         <div id="a1Phone">
-                            <img src="~/img/indeximg/minimga1.png"
+                            <img src="~/img/index_img/mini_mg_a1.png"
                              id="a1PhoneImage" />
                             <p id="a1PhoneDigits">
                                 8-029-350-01-03
@@ -125,26 +126,24 @@
                 <div class="triangle"></div>
             </button>
             
-            @using (Html.BeginForm())
-            {
-            <div class="searchField">
-                <div>
-                    <p>
-                        
-                        <input class="searchName" name="searchName">
-                    </p>
-                </div>
+            <form class="itemFindForm" asp-action="Create" enctype="multipart/form-data" method="post">
+                <div class="searchField">
+                    <div>
+                        <p>
+                            <input class="searchName" name="searchName">
+                        </p>
+                    </div>
             
-            <div class="menuButton"
-                 id="menuButtonImgField">
-                <img src="~/img/indeximg/miniimgsearchpng.png"
-                     height="200px"
-                     width="200px"
-                     id="menuButtonImg" />
-                    <input class="searchInput" type="submit" value="" asp-controller="Catalog" asp-action="">
-            </div>
-            </div>
-            }
+                    <div class="menuButton"
+                         id="menuButtonImgField">
+                        <img src="~/img/index_img/mini_img_search.png"
+                             height="200px"
+                             width="200px"
+                             id="menuButtonImg" />
+                            <input class="searchInput" type="submit" value="" asp-controller="Catalog" asp-action="">
+                    </div>
+                </div>
+            </form>
             
         </div>
     </header>
