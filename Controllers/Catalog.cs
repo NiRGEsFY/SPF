@@ -15,9 +15,8 @@ namespace SPF.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index(string searchName, string[] Type)
+        public IActionResult Index(string searchName, string[] Type)
         {
-            await _context.SaveChangesAsync();
             var item = from i in _context.Items
                        select i;
             if (Type.Length > 0)
@@ -40,7 +39,6 @@ namespace SPF.Controllers
                 item = item.Where(o => o.Name.Contains(searchName));
             }
             item = item.OrderByDescending(o => o.Top).ThenBy(o => o.Id).Take(30);
-            await _context.SaveChangesAsync();
             return View(item);
         }
         public async Task<IActionResult> Item(int? id)
